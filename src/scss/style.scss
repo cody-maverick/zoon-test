@@ -66,10 +66,7 @@ body {
 .stat-item_updates:after,
 .stat-item_rating:after,
 .card-status__item:after,
-.card-info__item:after,
-.card-reviews:after,
-.card-rating:before,
-.action:after {
+.card-reviews:after {
   @extend %after;
 }
 
@@ -112,8 +109,7 @@ body {
 }
 
 .stat-item__gist {
-  font-size: 13px;
-  // white-space: nowrap;
+  font-size: 13px; // white-space: nowrap;
 }
 
 // Statistics End
@@ -139,7 +135,7 @@ body {
 }
 
 .card-top {
-  display: flex;  
+  display: flex;
   align-items: center;
   margin-bottom: 7px;
   flex-wrap: wrap;
@@ -150,7 +146,6 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
-  
 
 .card-status__item,
 .card-reviews {
@@ -181,25 +176,25 @@ body {
   border-radius: 4px;
   border: solid 1px #e6ecf2;
   position: relative;
-  margin: 5px
-}
-
-.card-info__item:after {
-  top: 8px;
-  left: 7px;
-  width: 10px;
-  height: 10px;
-  background: url('../img/check.svg') no-repeat;
+  margin: 5px;
+  &:after {
+    @extend %after;
+    top: 8px;
+    left: 7px;
+    width: 10px;
+    height: 10px;
+    background: url('../img/check.svg') no-repeat;
+  }
 }
 
 .card-info__item_active {
   background: #5a39a7;
   color: #fff;
   border-color: #5a39a7;
-}
-
-.card-info__item_active:after {
-  filter: invert(100%);
+  &:after {
+    @extend %after;
+    filter: invert(100%);
+  }
 }
 
 .card-stat {
@@ -216,23 +211,23 @@ body {
   font-weight: bold;
   position: relative;
   padding-left: 21px;
-}
-
-.card-rating:before {
-  width: 16px;
-  height: 16px;
-  background: url('../img/card-star.svg') no-repeat;
-  top: -2px;
-  left: 0;
+  &:after {
+    @extend %after;
+    width: 16px;
+    height: 16px;
+    background: url('../img/card-star.svg') no-repeat;
+    top: -2px;
+    left: 0;
+  }
 }
 
 .card-reviews {
-  color: #000
-}
-
-.card-reviews:after {
-  background: #000;
-  top: 6px;
+  color: #000;
+  &:after {
+    @extend %after;
+    background: #000;
+    top: 6px;
+  }
 }
 
 .card-updates {
@@ -241,23 +236,23 @@ body {
 
 .card-info__item_process {
   padding-left: 26px;
-}
-
-.card-info__item_process:after {
-  background: url('../img/process.svg') no-repeat;
-  width: 16px;
-  height: 16px;
-  top: 6px;
-  left: 9px;
+  &:after {
+    @extend %after;
+    background: url('../img/process.svg') no-repeat;
+    width: 16px;
+    height: 16px;
+    top: 6px;
+    left: 9px;
+  }
 }
 
 .card-rating_off {
   font-weight: normal;
-  color: #bbbcc4
-}
-
-.card-rating_off:before {
-  background: url('../img/card-star-off.svg') no-repeat;
+  color: #bbbcc4;
+  &:after {
+    @extend %after;
+    background: url('../img/card-star-off.svg') no-repeat;
+  }
 }
 
 .action {
@@ -267,14 +262,14 @@ body {
   position: relative;
   padding: 7px 10px 6px 26px;
   margin-top: -11px;
-}
-
-.action:after {
-  background: url('../img/bell.svg') no-repeat;
-  width: 12px;
-  height: 15px;
-  top: 7px;
-  left: 9px;
+  &:after {
+    @extend %after;
+    background: url('../img/bell.svg') no-repeat;
+    width: 12px;
+    height: 15px;
+    top: 7px;
+    left: 9px;
+  }
 }
 
 .card-menu {
@@ -296,6 +291,7 @@ body {
   border-radius: 50%;
   display: block;
   transition: background-color 0.2s;
+  pointer-events: none;
 }
 
 .menu-round:not(:last-child) {
@@ -315,7 +311,65 @@ body {
   color: #bbbcc4
 }
 
+.card-menu-actions {
+  position: absolute;
+  top: 57px;
+  right: -8px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+  padding: 18px 20px;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s;
+  &:after {
+    @extend %after;
+    width: 15px;
+    border-top: solid 1px #e8e8e8;
+    top: -6px;
+    right: 24px;
+    transform: rotate(-47deg);
+    z-index: 2;
+  }
+  &:before {
+    @extend %after;
+    width: 15px;
+    border-top: solid 1px #e8e8e8;
+    top: -6px;
+    right: 14px;
+    transform: rotate(47deg);
+    z-index: 2;
+  }
+}
+
+.card-menu-actions_active {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 11px 10px;
+  border-color: transparent transparent #ffffff transparent;
+  top: -10px;
+  right: 17px;
+  position: absolute;
+}
+
+.card-menu_on {
+  font-size: 16px;
+  color: #694caf;
+  &:hover {
+    color: #4d14d2;
+  }
+}
+
+.card_disable .card-info__item_active {
+  background: #cedae6;
+  border-color: #cedae6;
+}
+
 // Cards End
-
-
 @import 'mobile.scss'
