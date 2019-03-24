@@ -1,0 +1,186 @@
+<%= _.template(require('./../includes/header.html'))() %>
+
+<main class="main">
+  <div class="wrapper">
+    <div class="stat">
+      <a href="#" class="stat-item stat-item_reviews">
+        <div class="stat-item__counter">
+          165
+        </div>
+        <div class="stat-item__gist">
+          отзывов
+        </div>
+      </a>
+      <a href="#" class="stat-item stat-item_not-answered">
+        <div class="stat-item__counter">
+          21
+        </div>
+        <div class="stat-item__gist">
+          неотвеченный отзыв
+        </div>
+      </a>
+      <a href="#" class="stat-item stat-item_updates">
+        <div class="stat-item__counter">
+          50
+        </div>
+        <div class="stat-item__gist">
+          обновлений
+        </div>
+      </a>
+      <a href="#" class="stat-item stat-item_rating">
+        <div class="stat-item__counter">
+          4,5
+        </div>
+        <div class="stat-item__gist">
+          средний рейтинг
+        </div>
+      </a>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-top">
+          <a href="#" class="card-name">Google</a>
+          <ul class="card-status">
+            <li class="card-status__item">
+              все 30 заведений настроены
+            </li>
+          </ul>
+        </div>
+        <ul class="card-info">
+          <li class="card-info__item card-info__item_active">
+            Синхронизировано
+          </li>
+          <li class="card-info__item">
+            Инфа
+          </li>
+          <li class="card-info__item">
+            Прайс
+          </li>
+          <li class="card-info__item">
+            Фото
+          </li>
+          <li class="card-info__item">
+            Акции
+          </li>
+        </ul>
+        <div class="card-stat">
+          <div class="card-stat-left">
+            <div class="card-rating">
+              4.5 из 5
+            </div>
+            <div class="card-reviews">
+              198 отзывов, 15 неотвеченных
+            </div>
+          </div>
+          <div class="card-stat-right">
+            <div class="card-updates">
+              2 обновления
+            </div>
+          </div>
+        </div>
+        <a class="card-menu" href="#">
+          <span class="menu-round"></span>
+          <span class="menu-round"></span>
+          <span class="menu-round"></span>
+        </a>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <a href="#" class="card-name">Flado</a>
+          <ul class="card-status">
+            <li class="card-status__item">
+              30 заведений
+            </li>
+            <li class="card-status__item">
+              4 настроено
+            </li>
+            <li class="card-status__item">
+              20 в поиске
+            </li>
+          </ul>
+        </div>
+        <ul class="card-info">
+          <li class="card-info__item card-info__item_process">
+            Создаем 3 страницы
+          </li>
+          <li class="card-info__item">
+            Инфа
+          </li>
+          <li class="card-info__item">
+            Прайс
+          </li>
+          <li class="card-info__item">
+            Фото
+          </li>
+          <li class="card-info__item">
+            Акции
+          </li>
+        </ul>
+        <div class="card-stat">
+          <div class="card-stat-left">
+            <div class="card-rating card-rating_off">
+              Портал без рейтинга
+            </div>
+          </div>
+          <div class="card-stat-right">
+            <div class="action">
+              Требует действий
+            </div>
+          </div>
+        </div>
+        <a class="card-menu" href="#">
+          <span class="menu-round"></span>
+          <span class="menu-round"></span>
+          <span class="menu-round"></span>
+        </a>
+      </div>
+      <div class="card card_disable">
+        <div class="card-top">
+          <a href="#" class="card-name">2Gis</a>
+        </div>
+        <ul class="card-info">
+          <li class="card-info__item card-info__item_process">
+            Создаем 3 страницы
+          </li>         
+        </ul>
+        <div class="card-stat">
+          <div class="card-stat-left">
+            <div class="card-search">
+              Поиск заведений: 15 из 78 ...
+            </div>
+          </div>
+          <div class="card-stat-right">
+            <div class="action">
+              Требует действий
+            </div>
+          </div>
+        </div>
+        <a class="card-menu" href="#">
+          <span class="menu-round"></span>
+          <span class="menu-round"></span>
+          <span class="menu-round"></span>
+        </a>
+      </div>
+      <div class="card card_disable">
+        <div class="card-top">
+          <a href="#" class="card-name">Yell</a>
+        </div>       
+        <div class="card-stat">
+          <div class="card-stat-left">
+            <div class="card-disable-info">
+              Площадка отключена
+            </div>
+          </div>
+         
+        </div>
+        <a class="card-menu" href="#">
+          <span class="menu-round"></span>
+          <span class="menu-round"></span>
+          <span class="menu-round"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%= _.template(require('./../includes/footer.html'))() %>

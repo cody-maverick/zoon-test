@@ -1,0 +1,85 @@
+/* Large desktops and laptops */
+
+@media (min-width: 1200px) {}
+
+/* Landscape tablets and medium desktops */
+
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+/* Portrait tablets and small desktops */
+
+@media (min-width: 768px) and (max-width: 991px) {}
+
+/* Landscape phones and portrait tablets */
+
+@media (max-width: 767px) {}
+
+/* Portrait phones and smaller */
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 10px 5px;
+  }
+  .stat {
+    margin-bottom: 20px;
+  }
+  .card-stat {
+    flex-direction: column;
+  }
+  .card-stat-left {
+    margin-bottom: 8px;
+  }
+  .card-stat-right {
+    display: inline-flex;
+  }
+  .action {
+    margin-top: 0;
+  }
+  .card-status {
+    margin-top: 5px;
+  }
+  .card-status__item,
+  .card-reviews {
+    padding-left: 15px;
+  }
+  .card-status__item:after,
+  .card-reviews:after {
+    top: 7px;
+    left: 6px;
+  }
+  .stat-item {
+    flex: 1;
+    max-width: 100%;
+    width: 50%;
+    padding: 14px 59px 12px 16px;
+  }
+  .stat-item_reviews:after,
+  .stat-item_not-answered:after,
+  .stat-item_updates:after,
+  .stat-item_rating:after {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .stat-item__counter {
+    font-size: 20px;
+    margin-bottom: 0px;
+  }
+  .stat-item__gist {
+    font-size: 10px;
+  }
+  .card-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Iphone 5 */
+
+@media (max-width: 380px) {
+  .card-stat-left {
+    flex-wrap: wrap;
+  }
+  .card-rating {
+    margin-bottom: 8px
+  }
+}

@@ -1,0 +1,321 @@
+@import './reset.scss';
+@import './vars.scss';
+// Main layout Start
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1204px;
+  margin: 0 auto;
+  padding: 0;
+  font-family: $font;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  background-color: #e6ecf2;
+}
+
+.main {
+  display: block; //ie fix
+  max-width: 1184px;
+  margin: 10px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.wrapper {
+  max-width: 1065px;
+  margin: 0 auto;
+  padding: 29px 10px;
+}
+
+// Main layout End 
+// Statistics Start
+.stat {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+  margin-left: 2.5px;
+}
+
+.stat-item {
+  background: #4a0594;
+  color: #fff;
+  flex: 1;
+  border-radius: 4px;
+  padding: 16px 70px 21px 24px;
+  box-sizing: border-box;
+  position: relative;
+  margin: 2.5px;
+  max-width: 260px;
+}
+
+.stat-item:hover {
+  background: #430486;
+}
+
+.stat-item_reviews:after,
+.stat-item_not-answered:after,
+.stat-item_updates:after,
+.stat-item_rating:after,
+.card-status__item:after,
+.card-info__item:after,
+.card-reviews:after,
+.card-rating:before,
+.action:after {
+  @extend %after;
+}
+
+.stat-item_reviews:after {
+  background: url('../img/reviews.svg') no-repeat;
+  top: 20px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+}
+
+.stat-item_not-answered:after {
+  background: url('../img/not-answered.svg') no-repeat;
+  top: 20px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+}
+
+.stat-item_updates:after {
+  background: url('../img/updates.svg') no-repeat;
+  top: 17px;
+  right: 15px;
+  width: 38px;
+  height: 38px;
+}
+
+.stat-item_rating:after {
+  background: url('../img/rating.svg') no-repeat;
+  top: 17px;
+  right: 15px;
+  width: 38px;
+  height: 36px;
+}
+
+.stat-item__counter {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.stat-item__gist {
+  font-size: 13px;
+  // white-space: nowrap;
+}
+
+// Statistics End
+// Cards start 
+.cards {
+  margin: 0 5px;
+}
+
+.card {
+  border: 1px solid #e6ecf2;
+  border-left: 4px solid #5a39a7;
+  border-radius: 4px;
+  padding: 16px 13px 16px 25px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.card-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000
+}
+
+.card-top {
+  display: flex;  
+  align-items: center;
+  margin-bottom: 7px;
+  flex-wrap: wrap;
+  max-width: 92%;
+}
+
+.card-status {
+  display: flex;
+  flex-wrap: wrap;
+}
+  
+
+.card-status__item,
+.card-reviews {
+  color: #bbbcc4;
+  position: relative;
+  padding-left: 20px;
+}
+
+.card-status__item:after,
+.card-reviews:after {
+  background: #bbbcc4;
+  width: 3px;
+  height: 3px;
+  top: 8px;
+  left: 10px;
+  border-radius: 50%
+}
+
+.card-info {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 17px;
+  margin-left: -5px;
+}
+
+.card-info__item {
+  padding: 6px 11px 6px 22px;
+  border-radius: 4px;
+  border: solid 1px #e6ecf2;
+  position: relative;
+  margin: 5px
+}
+
+.card-info__item:after {
+  top: 8px;
+  left: 7px;
+  width: 10px;
+  height: 10px;
+  background: url('../img/check.svg') no-repeat;
+}
+
+.card-info__item_active {
+  background: #5a39a7;
+  color: #fff;
+  border-color: #5a39a7;
+}
+
+.card-info__item_active:after {
+  filter: invert(100%);
+}
+
+.card-stat {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-stat-left {
+  display: flex;
+}
+
+.card-rating {
+  color: #ffaa30;
+  font-weight: bold;
+  position: relative;
+  padding-left: 21px;
+}
+
+.card-rating:before {
+  width: 16px;
+  height: 16px;
+  background: url('../img/card-star.svg') no-repeat;
+  top: -2px;
+  left: 0;
+}
+
+.card-reviews {
+  color: #000
+}
+
+.card-reviews:after {
+  background: #000;
+  top: 6px;
+}
+
+.card-updates {
+  color: #694caf;
+}
+
+.card-info__item_process {
+  padding-left: 26px;
+}
+
+.card-info__item_process:after {
+  background: url('../img/process.svg') no-repeat;
+  width: 16px;
+  height: 16px;
+  top: 6px;
+  left: 9px;
+}
+
+.card-rating_off {
+  font-weight: normal;
+  color: #bbbcc4
+}
+
+.card-rating_off:before {
+  background: url('../img/card-star-off.svg') no-repeat;
+}
+
+.action {
+  color: #fff;
+  border-radius: 4px;
+  background-color: #ffaa30;
+  position: relative;
+  padding: 7px 10px 6px 26px;
+  margin-top: -11px;
+}
+
+.action:after {
+  background: url('../img/bell.svg') no-repeat;
+  width: 12px;
+  height: 15px;
+  top: 7px;
+  left: 9px;
+}
+
+.card-menu {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 39px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu-round {
+  width: 4px;
+  height: 4px;
+  background-color: #cfd5db;
+  border-radius: 50%;
+  display: block;
+  transition: background-color 0.2s;
+}
+
+.menu-round:not(:last-child) {
+  margin-bottom: 3px;
+}
+
+.card-menu:hover .menu-round {
+  background-color: #5a39a7
+}
+
+.card_disable {
+  border-left-color: #cedae6;
+}
+
+.card-search,
+.card-disable-info {
+  color: #bbbcc4
+}
+
+// Cards End
+
+
+@import 'mobile.scss'
